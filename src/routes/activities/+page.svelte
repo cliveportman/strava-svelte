@@ -97,8 +97,8 @@
     <p>...loading</p>
   {:then activities}
     <div class="p-2 bg-pink-100">
-      <h2>Club Activities - mobilityways</h2>
-      <p>
+      <h2 class="font-bold">Club Activities - mobilityways</h2>
+      <p class="py-1 text-sm">
         Simplified activities returned - no dates or IDs, commute mode, etc.
         But, we could try getting around this by creating our own activity at
         midnight and using that as a reference point.
@@ -122,13 +122,13 @@
     <p>...loading</p>
   {:then activities}
     <div class="p-2 bg-green-100">
-      <h2>
+      <h2 class="font-bold">
         Athlete Activities - {$authStore.athlete.firstname}
         {$authStore.athlete.lastname}
       </h2>
-      <p>
+      <p class="py-1 text-sm">
         Detailed activities, all we need for a CO2e calculation are provided.
-        Commute is returned, but not is it reliably updated by the user? Could
+        Commute is returned, but is it reliably updated by the user? Could
         geofence using end location, if not.
       </p>
       <ul>
