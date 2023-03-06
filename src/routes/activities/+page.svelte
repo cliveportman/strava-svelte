@@ -98,12 +98,17 @@
   {:then activities}
     <div class="p-2 bg-pink-100">
       <h2>Club Activities - mobilityways</h2>
+      <p>
+        Simplified activities returned - no dates or IDs, commute mode, etc.
+        But, we could try getting around this by creating our own activity at
+        midnight and using that as a reference point.
+      </p>
       <ul>
         {#each activities as activity}
           <li class="text-xs">
             <strong>{activity.athlete.firstname}:</strong>
             <span
-              >{activity.name} ({(activity.distance / 1000).toFixed(1)}km)</span
+              >{activity.name} ({(activity.distance / 1000).toFixed(1)}km, {activity.type})</span
             >
           </li>
         {/each}
@@ -121,6 +126,11 @@
         Athlete Activities - {$authStore.athlete.firstname}
         {$authStore.athlete.lastname}
       </h2>
+      <p>
+        Detailed activities, all we need for a CO2e calculation are provided.
+        Commute is returned, but not is it reliably updated by the user? Could
+        geofence using end location, if not.
+      </p>
       <ul>
         {#each activities as activity}
           <li class="text-xs">
